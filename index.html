@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>TRÀ SỮA - DINGTEA</title>
+	<link rel="stylesheet" href="assets/styles.css">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link href="assets/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/nophs.css">
+    <link rel="stylesheet" type="text/css" href="assets/search.css">
+    <script language='javascript'>
+   <!--
+   function isNumberKey(evt)
+   {
+   var charCode = (evt.which) ? evt.which : event.keyCode
+   if (charCode > 31 && (charCode < 48 || charCode > 57))
+   return false;
+   return true;
+   }
+   //-->
+</script>
+</head>
+<body>
+<!-- NAVIGATION BAR START -->
+<header>
+	<nav class="navbar navbar-fixed-top navbar-inverse" style="background-color: rgba(51, 51, 51, 0.3);border-width: 0px;">
+	  <!--<img src="images/line-mn.png" alt="">-->
+	  <a class="navbar-brand" href="#">
+	      	<img id="logo" src="images/logo-dingtea.png" class="img-responsive" alt="logo-dingtea">
+	  </a>
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span> 
+	      </button>
+	    </div>
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	    	<ul class="nav navbar-nav navbar-right">
+				        <li><a href="#home">TRANG CHỦ</a></li>
+				        <li><a href="#">SẢN PHẨM</a></li>
+				        <li><a href="#">GIỚI THIỆU</a></li>
+				        <li><a href="#">HỖ TRỢ</a></li>
+				        <li class="dropdown">
+				          <a class="dropbtn" href="#">CƠ HỘI VIỆC LÀM
+				            <span class="caret"></span>
+				          </a>
+				          <ul class="dropdown-content">
+				            <li><a href="#">VĂN PHÒNG</a></li>
+				            <li><a href="#">KHO HÀNG</a></li>
+				            <li><a href="#">CỬA HÀNG</a></li> 
+				          </ul>
+				        </li>
+				        <li><a href="#myModal" class="btn" data-toggle="modal" data-target="#myModal">NỘP HỒ SƠ</a></li>
+			</ul>
+	    </div>
+	  </div>  
+	</nav>
+</header>
+<!-- NAVIGATION BAR END -->
+
+
+<!-- DANH SÁCH VIỆC LÀM -->
+
+	<!-- <div class="window"> -->
+		<div class="container-fluid">
+			<div class="row content">
+				<div class="col-sm-3 sidenav">
+					<h4>ĐỊA PHƯƠNG</h4>
+					<ul class="nav nav-pills nav-stacked">
+				        <li class="active"><a href="#hanoi">Hà Nội<span class="badge pull-right"><!-- <?php echo($notihanoi);?> -->2</span></a></li>
+				        <li><a href="#hcm">TP HCM</a></li>
+				        <li><a href="#danang">Đà Nẵng</a></li>
+			        </ul><br>
+				</div>			
+			<div class="col-sm-9">
+				<div class="jobs_list_detail">
+
+
+<!-- 	 Bảng danh sách khi chưa chia tab, dành cho những tỉnh thành khác Hà Nội -->				
+			<!--	<div class="row">
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Vị trí</th>
+									<th>Địa điểm làm việc</th>
+									<th>Số lượng</th>
+									<th>Hạn nộp hồ sơ</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><a href="/Nhan-vien-parttime-96-nguyen-du.html">Nhân viên part-time</a></td>
+									<td>96 Nguyễn Du</td>
+									<td>6</td>
+									<td>22-02-2017</td>
+								</tr>
+								<tr>
+									<td><a href="/Nhan-vien-IT-96-nguyen-du.html">Nhân viên IT</a></td>
+									<td>96 Nguyễn Du</td>
+									<td>2</td>
+									<td>22-03-2017</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>	
+				</div>		 -->			
+
+				
+<div> <!-- Tab chỉ hiện khi click vào Hà Nội -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#tatca">Tất cả</a></li>
+    <li><a data-toggle="tab" href="#vanphong">Văn phòng</a></li>
+    <li><a data-toggle="tab" href="#cuahang">Cửa hàng</a></li>
+  </ul>
+  <div class="tab-content">
+    <div id="tatca" class="tab-pane fade in active">
+		<div class="row">
+			<div class="table-responsive">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>Vị trí</th>
+							<th>Địa điểm làm việc</th>
+							<th>Số lượng</th>
+							<th>Hạn nộp hồ sơ</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="/Nhan-vien-parttime-96-nguyen-du.html">Nhân viên part-time</a></td>
+							<td>96 Nguyễn Du</td>
+							<td>6</td>
+							<td>22-02-2017</td>
+						</tr>
+						<tr>
+							<td><a href="/Nhan-vien-IT-96-nguyen-du.html">Nhân viên IT</a></td>
+							<td>96 Nguyễn Du</td>
+							<td>2</td>
+							<td>22-03-2017</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>	
+		</div>
+	</div>
+    <div id="vanphong" class="tab-pane fade">
+		<div class="row">
+			<div class="table-responsive">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>Vị trí</th>
+							<th>Địa điểm làm việc</th>
+							<th>Số lượng</th>
+							<th>Hạn nộp hồ sơ</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="/Nhan-vien-IT-96-nguyen-du.html">Nhân viên IT</a></td>
+							<td>96 Nguyễn Du</td>
+							<td>2</td>
+							<td>22-03-2017</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>	
+		</div>
+    </div>
+    <div id="cuahang" class="tab-pane fade">
+		<div class="row">
+			<div class="table-responsive">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>Vị trí</th>
+							<th>Địa điểm làm việc</th>
+							<th>Số lượng</th>
+							<th>Hạn nộp hồ sơ</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="/Nhan-vien-parttime-96-nguyen-du.html">Nhân viên part-time</a></td>
+							<td>96 Nguyễn Du</td>
+							<td>6</td>
+							<td>22-02-2017</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>	
+		</div>
+    </div>
+  </div>
+</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	<!-- </div> -->
+
+
+<!-- HẾT DANH SÁCH VIỆC LÀM -->
+
+
+<!-- FORM NỘP HỒ SƠ -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4><span></span> Nộp hồ sơ trực tuyến</h4>
+      </div>
+      <div class="modal-body">
+
+        <form action="formproc.php" method="POST">
+          <section class="content-nophs bgcolor-1">
+            <span class="input input-haruki">
+              <input class="input_field input_field-haruki" type="text" id="hoten">
+              <label class="input_label input_label-haruki" for="hoten">
+                <span class="input_label-content input_label-content-haruki">Họ và tên</span>
+              </label>
+            </span>
+            <span class="input input-haruki">
+              <input class="input_field input_field-haruki" type="text" id="ngaysinh">
+                <label class="input_label input_label-haruki" for="ngaysinh">
+                  <span class="input_label-content input_label-content-haruki">Ngày sinh</span>
+                </label>
+            </span><br>
+            
+            <div class="gender">
+              <div class="col-xs-12"><br>
+                <h3> Giới tính: </h3><br>           
+                <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                  <label class="btn active">
+                    <input type="radio" id="gioitinh" value="gtnam" checked><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>  Nam</span>
+                    </label>
+                  <label class="btn">
+                    <input type="radio" id="gioitinh" value="gtnu"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span> Nữ</span>
+                  </label>
+                  <label class="btn">
+                    <input type="radio" id="gioitinh" value="gtkhac"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span> Khác</span>
+                  </label>    
+                </div>
+              </div>
+            </div>
+            
+            <span class="input input-haruki">
+              <input class="input_field input_field-haruki" type="text" id="anhchandung">
+                <label class="input_label input_label-haruki" for="anhchandung">
+                  <span class="input_label-content input_label-content-haruki">Ảnh chân dung</span>
+                </label>
+            </span> <br>
+            
+            <span class="input input-haruki">
+              <input class="input_field input_field-haruki" type="text" id="email">
+                <label class="input_label input_label-haruki" for="email">
+                  <span class="input_label-content input_label-content-haruki">Email</span>
+                </label>
+            </span>
+            
+            <span class="input input-haruki">
+              <input class="input_field input_field-haruki" type="text" onKeyPress="return isNumberKey(event)" id="sdt">
+                <label class="input_label input_label-haruki" for="sdt">
+                  <span class="input_label-content input_label-content-haruki">Số điện thoại</span>
+                </label>
+            </span> <br>
+            
+            <span class="input input-haruki">
+              <input class="input_field input_field-haruki" type="text" onKeyPress="return isNumberKey(event)" id="cmnd">
+                <label class="input_label input_label-haruki" for="cmnd">
+                  <span class="input_label-content input_label-content-haruki">Số CMND</span>
+                </label>
+            </span> 
+            
+            <span class="input input-haruki">
+              <input class="input_field input_field-haruki" type="text" id="diachi">
+                <label class="input_label input_label-haruki" for="diachi">
+                  <span class="input_label-content input_label-content-haruki">Địa chỉ hiện tại</span>
+                </label>
+            </span> <br>
+            
+            <span class="input input-haruki">
+              <input class="input_field input_field-haruki" type="text" id="hocvan">
+                <label class="input_label input_label-haruki" for="hocvan">
+                  <span class="input_label-content input_label-content-haruki">Trình độ học vấn</span>
+                </label>
+            </span> 
+            
+            <span class="input input-haruki">
+              <input class="input_field input_field-haruki" type="text" id="linkfb">
+                <label class="input_label input_label-haruki" for="linkfb">
+                  <span class="input_label-content input_label-content-haruki">Địa chỉ Facebook cá nhân</span>
+                </label>
+            </span> <br>
+            
+            <div class="kntienganh">
+              <div class="col-xs-12"><br>
+                <h3> Khả năng giao tiếp Tiếng Anh </h3><br>           
+                <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                  <label class="btn active">
+                    <input type="radio" value="tatot" checked><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>  Tốt</span>
+                  </label>
+                  <label class="btn">
+                    <input type="radio" value="tadochieu"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span> Giao tiếp đọc hiểu cơ bản</span>
+                  </label>
+                  <label class="btn">
+                    <input type="radio" value="takobiet"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span> Không biết Tiếng Anh</span>
+                  </label>    
+                </div>
+              </div>
+            </div>
+            
+            <span class="input input-haruki">
+              <input class="input_field input_field-haruki" type="textarea" id="lydo">
+                <label class="input_label input_label-haruki" for="lydo">
+                  <span class="input_label-content input_label-content-haruki">Lý do bạn muốn làm việc tại Ding Tea</span>
+                </label>
+            </span>     
+            
+            <span class="input input-haruki">
+              <input class="input_field input_field-haruki" type="textarea" id="kinhnghiem">
+                <label class="input_label input_label-haruki" for="kinhnghiem">
+                  <span class="input_label-content input_label-content-haruki">Kinh nghiệm làm việc</span>
+                </label>
+            </span> <br>
+            
+            <span class="input input-haruki">
+              <input class="input_field input_field-haruki" type="textarea" id="kynang">
+                <label class="input_label input_label-haruki" for="kynang">
+                  <span class="input_label-content input_label-content-haruki">Kỹ năng và thế mạnh của bản thân</span>
+                </label>
+            </span> 
+            
+            <span class="input input-haruki">
+              <input class="input_field input_field-haruki" type="textarea" id="tgdilam">
+                <label class="input_label input_label-haruki" for="tgdilam">
+                  <span class="input_label-content input_label-content-haruki">Khi nào bạn có thể bắt đầu làm việc?</span>
+                </label>
+            </span> <br>  
+
+              <div> <!-- <div class="row"> -->
+              <div class="col-xs-12">
+                <br> <h3>Ca làm việc mong muốn </h3><br>
+                <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                  <label class="btn">
+                    <input type="checkbox" name='calam'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span> Part time Sáng 08.00 - 12.00</span>
+                  </label>
+                  <label class="btn">
+                    <input type="checkbox" name='calam'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Part time Chiều 12.00 - 18.00</span>
+                  </label>
+                  <label class="btn">
+                    <input type="checkbox" name='calam'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Part time Tối : 18.00 - 23.00</span>
+                  </label>
+                  <label class="btn">
+                    <input type="checkbox" name='calam'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Full time Sáng 08.00 - 16.00</span>
+                  </label>
+                  <label class="btn">
+                    <input type="checkbox" name='calam'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Full time Tối 16.00 - 23.00</span>
+                  </label>
+                  <label class="btn">
+                    <input type="checkbox" name='calam'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Khác</span>
+                  </label>
+                </div>
+              </div>
+              </div>        
+          
+              <div>
+              <div class="col-xs-12">
+                <br> <h3>Bạn biết đến thông tin tuyển dụng của chúng tôi qua nguồn nào? </h3><br>
+                <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                  <label class="btn">
+                    <input type="checkbox" name='nguontin'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span>Fanpage của DING TEA</span>
+                  </label>
+                  <label class="btn">
+                    <input type="checkbox" name='nguontin'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Có bạn/người quen làm việc tại DING TEA</span>
+                  </label>
+                  <label class="btn">
+                    <input type="checkbox" name='nguontin'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Google</span>
+                  </label>
+                  <label class="btn">
+                    <input type="checkbox" name='nguontin'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Khác</span>
+                  </label>
+                </div>
+              </div>
+              </div>
+
+            <div>
+              <div class="col-xs-12">
+                <br><h3> Bạn dự định gắn bó với công việc tại Ding Tea trong bao lâu? </h3>
+                <br>
+                <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                  <label class="btn active">
+                    <input type="radio" name="tgganbo" value="tg6" checked><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i> <span>  6 tháng</span>
+                  </label>
+                  <label class="btn">
+                    <input type="radio" name="tgganbo" value="tg612"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span> 06 - 12 tháng</span>
+                  </label>
+                  <label class="btn">
+                    <input type="radio" name="tgganbo" value="tgtren12"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i><span> Trên 12 tháng</span>
+                  </label>    
+                </div>
+              </div>
+            </div>    
+            <input class="button" type="submit" name="ungtuyen" value="Ứng tuyển"/>   
+          </section>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span> Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- HẾT FORM NỘP HỒ SƠ -->
+	<footer>
+		<div class="row">
+			<div class="col-sm-4 ft-left">
+				<a href="#">Quy trình sản xuất</a>
+				<a href="#">Nhận xét của khách hàng</a>
+			</div>
+			<div class="col-sm-4 text-center">
+				<span>DINGTEA</span><br>
+				<p>All rights reserved by dingtea.vn</p>
+			</div>
+			<div class="col-sm-4 ft-right">
+				<ul>
+					<li>
+						<a href="https://www.facebook.com/Dingtea.vietnam/"><img src="images/fb.png" alt="">
+					</li>
+					<li>
+						<img src="images/yt.png" alt="">
+					</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
